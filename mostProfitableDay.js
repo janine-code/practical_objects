@@ -1,4 +1,4 @@
-//var assert = require('assert');
+var assert = require('assert');
 
 var salesData = [{
   department: 'hardware',
@@ -63,28 +63,55 @@ var salesData = [{
 }, ];
 
 var mostProfitableDay = function(salesData){
-
-  var arr = [];
-  arr2=[];
-  var highestProfit = 0;
+var sum=0;
+  var arrMond = [];
+var arrTues=[];
+var arrWed=[];
+var arrThur=[];
+var arrFri=[];
   for(var i=0; i<salesData.length; i++){
     var Day = salesData[i];
    var sales = Day.sales;
    var day = Day.day;
    var sal = "";
-    arr.push(sales);
-    //console.log(arr);
-    arr2.push(day);
-if(highestProfit<arr[i]){
-  highestProfit=arr[i];
-  sal =arr2;
 
-}
-    //if(Math.max(arr[i])){
-      //return Math.max(arr);
-      //highestProfit = day;
-    //}
+    if(day==='Monday'){
+sum+=sales;
+arrMond.push(sum);
+    }
+    if(day==='Tuesday'){
+  sum+=sales;
+  arrTues.push(sum);
+    }
+    if(day==='Wednesday'){
+  sum+=sales;
+  arrWed.push(sum);
+    }
+    if(day==='Thursday'){
+sum+=sales;
+arrThur.push(sum);
+    }
+    if(day==='Friday'){
+sum+=sales;
+arrFri.push(sum);
+    }
+
   }
-  return sal;
+if(arrMond>arrTues&&arrMond>arrWed&&arrMond>arrThur&&arrMond>arrFri){
+  return "Monday is the most profitable day!"
+}
+if(arrTues>arrMond&&arrTues>arrWed&&arrTues>arrThur&&arrTues>arrFri){
+  return "Tuesday is the most profitable day!"
+}
+if(arrWed>arrMond&&arrWed>arrTues&&arrWed>arrThur&&arrWed>arrFri){
+  return "Wednesday is the most profitable day!"
+}
+if(arrThur>arrMond&&arrThur>arrTues&&arrThur>arrWed&&arrThur>arrFri){
+  return "Thursday is the most profitable day!"
+}
+if(arrFri>arrTues&&arrFri>arrWed&&arrFri>arrThur&&arrFri>arrMond){
+  return "Friday is the most profitable day!"
+}
 }
 console.log(mostProfitableDay(salesData));
+assert.equal(mostProfitableDay(salesData),"Friday is the most profitable day!")

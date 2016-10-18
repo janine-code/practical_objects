@@ -1,3 +1,4 @@
+var assert = require('assert');
 var itemList = [{
   name: 'apples',
   price: 10
@@ -25,3 +26,10 @@ var findItemsOver = function(itemList) {
   return arrItems;
 }
 findItemsOver(itemList);
+assert.equal(findItemsOver(itemList), [{
+  name: 'pears',
+  price: 37
+}, {
+  name: 'bananas',
+  price: 27
+}]);

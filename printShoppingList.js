@@ -1,3 +1,4 @@
+var assert = require('assert');
 var shoppingList = [{
   itemName: 'Bread',
   price: 11.00
@@ -10,10 +11,13 @@ var shoppingList = [{
 }];
 
 var printShoppingList = function() {
-  console.log("ShoppingList:");
+  var resultList = "";
+  var shop = console.log("ShoppingList:");
   for (var i = 0; i < shoppingList.length; i++) {
     var item = shoppingList[i];
-    console.log("*"+item.itemName + " " + "*"+"@"+item.price);
+    resultList = console.log("*" + item.itemName + " " + "@" + item.price);
   }
+  return shop + resultList;
 }
-printShoppingList();
+printShoppingList(shoppingList);
+assert.equal(printShoppingList(shoppingList), ShoppingList: * Bread @11 * Milk @7 * Cheese @19.50);

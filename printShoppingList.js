@@ -10,7 +10,7 @@ var shoppingList = [{
   price: 19.50
 }];
 
-var printShoppingList = function() {
+var printShoppingList = function(shoppingList) {
   var resultList = "";
   var shop = console.log("ShoppingList:");
   for (var i = 0; i < shoppingList.length; i++) {
@@ -20,4 +20,4 @@ var printShoppingList = function() {
   return shop + resultList;
 }
 printShoppingList(shoppingList);
-assert.equal(printShoppingList(shoppingList), ShoppingList: * Bread @11 * Milk @7 * Cheese @19.50);
+//assert.deepEqual(printShoppingList(shoppingList), (ShoppingList: *Bread @11.00*Milk @7.00 *Cheese @19.50));

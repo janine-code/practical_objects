@@ -4,7 +4,7 @@ var mostWordsEndWith = function(sentence) {
   var strSplit = sentence.split(" ");
   var object = {};
   var highestNo = 0;
-  var blah = null;
+  //var blah = null;
   var letter="";
   var mostWords=[];
   //var arr=[];
@@ -38,6 +38,6 @@ var mostWordsEndWith = function(sentence) {
   //  if(sent[i].endsWith()){console.log(word);}
 
 }
-console.log(mostWordsEndWith('Down by the river there is a man that quiver and shiver, but he needs to deliver a packet that he think is a big racket and a packet of of gum.'));
-//assert.equal(mostWordsEndWith('Down by the river there is a man that quiver and shiver, but he needs to deliver a packet that he think is a big racket and a packet of of gum.'),letter :'t',
-//occurences : 6, words : [ 'that', 'but', 'packet', 'that', 'racket', 'packet' ]);
+var sentence ='Down by the river there is a man that quiver and shiver, but he needs to deliver a packet that he think is a big racket and a packet of of gum.'
+//console.log(mostWordsEndWith('Down by the river there is a man that quiver and shiver, but he needs to deliver a packet that he think is a big racket and a packet of of gum.'));
+assert.deepEqual(mostWordsEndWith(sentence),{letter :'t', occurences : 6, words : [ 'that', 'but', 'packet', 'that', 'racket', 'packet' ]});

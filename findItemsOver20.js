@@ -18,7 +18,8 @@ var findItemsOver = function(itemList) {
   arrItems = [];
   for (var i = 0; i < itemList.length; i++) {
     var items = itemList[i];
-    if (items.price > 25) {
+    var blah = items.price;
+    if (blah > 20) {
       arrItems.push(items);
     }
   }
@@ -26,10 +27,4 @@ var findItemsOver = function(itemList) {
   return arrItems;
 }
 findItemsOver(itemList);
-assert.equal(findItemsOver(itemList), [{
-  name: 'pears',
-  price: 37
-}, {
-  name: 'bananas',
-  price: 27
-}]);
+assert.deepEqual(findItemsOver(itemList), [ { name: 'pears', price: 37 }, { name: 'bananas', price: 27 } ]);

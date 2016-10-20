@@ -62,7 +62,7 @@ var salesData = [{
   day: 'Friday'
 }, ];
 
-var mostProfitableDepartment = function(salesData) {
+/*var mostProfitableDepartment = function(salesData) {
   var mostProfitDepArr = [];
   arrHardware = [];
   arrOutdoor = [];
@@ -97,3 +97,35 @@ var mostProfitableDepartment = function(salesData) {
 }
 console.log(mostProfitableDepartment(salesData));
 assert.equal(mostProfitableDepartment(salesData), 'Carpentry')
+
+*/
+
+//second approach
+
+var blah = function(salesData) {
+  var highestProfit = 0;
+  var obj = {}; //map
+  var depMostProfit = {};
+  for (var i = 0; i < salesData.length; i++) {
+    var salesD = salesData[i];
+    if (obj[salesD.department] === undefined) {
+      obj[salesD.department] = 0;
+    }
+    obj[salesD.department] = obj[salesD.department] + salesD.sales;
+  }
+  console.log(obj);
+  for (var key in obj) {
+    if (highestProfit < obj[key]) {
+      highestProfit = obj[key];
+      depMostProfit = {
+        department: key,
+        sales: highestProfit
+      }
+
+    }
+
+  }
+  console.log(depMostProfit);
+  return depMostProfit;
+}
+blah(salesData);

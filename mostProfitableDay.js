@@ -62,76 +62,6 @@ var salesData = [{
   day: 'Friday'
 }, ];
 
-/* first approach
-var mostProfitableDay = function(salesData){
-var sum=0;
-  var arrMond = [];
-var arrTues=[];
-var arrWed=[];
-var arrThur=[];
-var arrFri=[];
-var day ="";
-var highestNo="";
-  for(var i=0; i<salesData.length; i++){
-    var Day = salesData[i];
-   var sales = Day.sales;
-   var day = Day.day;
-
-
-    if(day==='Monday'){
-sum+=sales;
-arrMond.push(sum);
-    }
-    if(day==='Tuesday'){
-  sum+=sales;
-  arrTues.push(sum);
-    }
-    if(day==='Wednesday'){
-  sum+=sales;
-  arrWed.push(sum);
-    }
-    if(day==='Thursday'){
-sum+=sales;
-arrThur.push(sum);
-    }
-    if(day==='Friday'){
-sum+=sales;
-arrFri.push(sum);
-    }
-
-
-  }
-  map={
-    monday:arrMond[0], Tues:arrTues[0], Wed:arrWed[0], Thu:arrThur[0], Fri:arrFri[0]
-  }
-  for(var key in map){
-  if(highestNo<map[key]){
-    highestNo=map[key];
-    day = key;
-  }
-  return day;
-}
-}
-/* if(arrMond>arrTues&&arrMond>arrWed&&arrMond>arrThur&&arrMond>arrFri){
-  return "Monday is the most profitable day!"
-}
-if(arrTues>arrMond&&arrTues>arrWed&&arrTues>arrThur&&arrTues>arrFri){
-  return "Tuesday is the most profitable day!"
-}
-if(arrWed>arrMond&&arrWed>arrTues&&arrWed>arrThur&&arrWed>arrFri){
-  return "Wednesday is the most profitable day!"
-}
-if(arrThur>arrMond&&arrThur>arrTues&&arrThur>arrWed&&arrThur>arrFri){
-  return "Thursday is the most profitable day!"
-}
-if(arrFri>arrTues&&arrFri>arrWed&&arrFri>arrThur&&arrFri>arrMond){
-  return "Friday is the most profitable day!"
-}
-}
-console.log(mostProfitableDay(salesData));*/
-
-//second approach
-
 var mostProfitableDay = function(salesData) {
   var highestProfit = 0;
   var obj = {}; //map
@@ -158,3 +88,7 @@ var mostProfitableDay = function(salesData) {
   return dayMostProfit;
 }
 mostProfitableDay(salesData);
+assert.deepEqual(mostProfitableDay(salesData), {
+  day: 'Thursday',
+  sales: 36116
+});

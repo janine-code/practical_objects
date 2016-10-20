@@ -62,47 +62,7 @@ var salesData = [{
   day: 'Friday'
 }, ];
 
-/*var mostProfitableDepartment = function(salesData) {
-  var mostProfitDepArr = [];
-  arrHardware = [];
-  arrOutdoor = [];
-  arrCarpentry = [];
-  var highestSales = 0;
-  var sum1 = 0;
-  var sum2 = 0;
-  sum3 = 0;
-  for (var i = 0; i < salesData.length; i++) {
-    var listDep = salesData[i];
-    if (listDep.department === 'hardware') {
-      sum1 += listDep.sales;
-      arrHardware.push(sum1);
-    }
-    if (listDep.department === 'outdoor') {
-      sum2 += listDep.sales;
-      arrOutdoor.push(sum1);
-    }
-    if (listDep.department === 'carpentry') {
-      sum3 += listDep.sales;
-      arrCarpentry.push(sum1);
-    }
-  }
-  if (arrCarpentry < arrHardware > arrOutdoor) {
-    return 'Hardware'
-  } else if (arrCarpentry < arrOutdoor > arrHardware) {
-    return 'Outdoor'
-
-  } else {
-    return 'Carpentry'
-  }
-}
-console.log(mostProfitableDepartment(salesData));
-assert.equal(mostProfitableDepartment(salesData), 'Carpentry')
-
-*/
-
-//second approach
-
-var blah = function(salesData) {
+var mostProfitableDepartment = function(salesData) {
   var highestProfit = 0;
   var obj = {}; //map
   var depMostProfit = {};
@@ -128,4 +88,9 @@ var blah = function(salesData) {
   console.log(depMostProfit);
   return depMostProfit;
 }
-blah(salesData);
+mostProfitableDepartment(salesData);
+
+assert.deepEqual(mostProfitableDepartment(salesData), {
+  department: 'outdoor',
+  sales: 42525
+})
